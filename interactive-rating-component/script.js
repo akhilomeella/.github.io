@@ -16,3 +16,4 @@ submitButton.addEventListener("click", () => {
       ${score}
       `;
 });
+ 
