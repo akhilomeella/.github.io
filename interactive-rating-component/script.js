@@ -9,6 +9,8 @@ document.querySelectorAll(".btns button").forEach((btn) => {
   });
 });
 
+if(score !== 0){
+
 submitButton.addEventListener("click", () => {
   subSection.classList.remove("hide");
   mainSection.style.display = "none";
@@ -16,4 +18,8 @@ submitButton.addEventListener("click", () => {
       ${score}
       `;
 });
+}
+else{
+  alert("Please choose a rating");
+}
  
