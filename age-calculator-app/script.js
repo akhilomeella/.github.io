@@ -39,6 +39,49 @@ function removeLabelErr(removeLab) {
   removeLab.classList.remove("Label");
 }
 
+
+function convert() {
+  const birthYear = yearInput.value;
+  const birthMonth = monthInput.value;
+  const birthDay = dayInput.value;
+
+  let months;
+  let days;
+
+  
+  let years = currentYear - birthYear;
+  if (currentMonth >= birthMonth) {
+    months = currentMonth - birthMonth;
+  } else {
+    years--;
+    months = currentMonth - birthMonth + 12;
+  }
+
+  if (currentDay >= birthDay) {
+    days = currentDay - birthDay;
+  } else {
+    months--;
+    days = currentDay - birthDay + 31;
+
+    if (months < 0) {
+      months = 11;
+      years--;
+    }
+  }
+
+  birthDay > 31 || birthMonth > 12 || birthYear > currentYear || birthDay == "" || birthMonth == "" || birthYear == ""
+    ? false
+    : (replaceDays.innerHTML = days + " ");
+  birthMonth > 12 ||  birthDay > 31 || birthYear > currentYear || birthMonth == "" || birthDay == "" || birthYear == ""
+    ? false
+    : (replaceMonths.innerHTML = months + " ");
+  birthYear >= currentYear ||
+  birthDay > 31 || birthMonth > 12 || birthYear == "" || birthDay == "" || birthMonth == ""
+    ? false
+    : (replaceYears.innerHTML = years + " ");
+}
+
+
 function validate() {
   if (dayInput.value > 31) {
     addLabelErr(dayLabel);
@@ -108,46 +151,6 @@ function validate() {
       }
       break;
   }
-}
-
-function convert() {
-  const birthYear = yearInput.value;
-  const birthMonth = monthInput.value;
-  const birthDay = dayInput.value;
-
-  let months;
-  let days;
-
-  let years = currentYear - birthYear;
-  if (currentMonth >= birthMonth) {
-    months = currentMonth - birthMonth;
-  } else {
-    years--;
-    months = currentMonth - birthMonth + 12;
-  }
-
-  if (currentDay >= birthDay) {
-    days = currentDay - birthDay;
-  } else {
-    months--;
-    days = currentDay - birthDay + 31;
-
-    if (months < 0) {
-      months = 11;
-      years--;
-    }
-  }
-
-  birthDay > 31 || birthMonth > 12 || birthYear > currentYear || birthDay == "" || birthMonth == "" || birthYear == ""
-    ? false
-    : (replaceDays.innerHTML = days + " ");
-  birthMonth > 12 ||  birthDay > 31 || birthYear > currentYear || birthMonth == "" || birthDay == "" || birthYear == ""
-    ? false
-    : (replaceMonths.innerHTML = months + " ");
-  birthYear > currentYear ||
-  birthDay > 31 || birthMonth > 12 || birthYear == "" || birthDay == "" || birthMonth == ""
-    ? false
-    : (replaceYears.innerHTML = years + " ");
 }
 
 submit.addEventListener("click", validate);
