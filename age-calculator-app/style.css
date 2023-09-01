@@ -184,8 +184,12 @@ span {
 
   .arrowBtn {
     position: absolute;
-   
     left: 40%;
     /* transform: translate(-50%, -50%); */
+  }
+
+  .invalid-error,
+.empty-error{
+    font-size: 9px;
   }
 }
