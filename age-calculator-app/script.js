@@ -39,49 +39,6 @@ function removeLabelErr(removeLab) {
   removeLab.classList.remove("Label");
 }
 
-
-function convert() {
-  const birthYear = yearInput.value;
-  const birthMonth = monthInput.value;
-  const birthDay = dayInput.value;
-
-  let months;
-  let days;
-
-  
-  let years = currentYear - birthYear;
-  if (currentMonth >= birthMonth) {
-    months = currentMonth - birthMonth;
-  } else {
-    years--;
-    months = currentMonth - birthMonth + 12;
-  }
-
-  if (currentDay >= birthDay) {
-    days = currentDay - birthDay;
-  } else {
-    months--;
-    days = currentDay - birthDay + 31;
-
-    if (months < 0) {
-      months = 11;
-      years--;
-    }
-  }
-
-  birthDay > 31 || birthMonth > 12 || birthYear > currentYear || birthDay == "" || birthMonth == "" || birthYear == ""
-    ? false
-    : (replaceDays.innerHTML = days + " ");
-  birthMonth > 12 ||  birthDay > 31 || birthYear > currentYear || birthMonth == "" || birthDay == "" || birthYear == ""
-    ? false
-    : (replaceMonths.innerHTML = months + " ");
-  birthYear >= currentYear ||
-  birthDay > 31 || birthMonth > 12 || birthYear == "" || birthDay == "" || birthMonth == ""
-    ? false
-    : (replaceYears.innerHTML = years + " ");
-}
-
-
 function validate() {
   if (dayInput.value > 31) {
     addLabelErr(dayLabel);
@@ -90,7 +47,7 @@ function validate() {
     removeLabelErr(dayLabel);
     removeError(dayInvalid);
   }
-  if (monthInput.value > 12) {
+  if (monthInput.value > 12 ) {
     addLabelErr(monthLabel);
     addError(monthInvalid);
   } else {
@@ -105,7 +62,7 @@ function validate() {
     removeError(yearInvalid);
   }
 
-  if (dayInput.value == "") {
+  if (dayInput.value == "" ) {
     dayLabel.classList.add("Empty");
     addError(dayEmpty);
   } else {
@@ -139,18 +96,63 @@ function validate() {
       }
       break;
     case 2:
-      if (yearInput.value % 4 === 0) {
-        if (dayInput.value > 29) {
-          dayInvalid.innerHTML = "A leap year";
-          addLabelErr(dayLabel);
-          addError(dayInvalid);
-        }
-      } else if (dayInput.value > 28) {
-        addLabelErr(dayLabel);
-        addError(dayInvalid);
-      }
+      isLeapYear();
       break;
   }
+}
+
+function isLeapYear(){
+  if (yearInput.value % 4 === 0 && monthInput.value ===2) {
+    if (dayInput.value > 29) {
+      dayInvalid.innerHTML = "A leap year";
+      addLabelErr(dayLabel);
+      addError(dayInvalid);
+    }
+  } else if (dayInput.value > 28) {
+    addLabelErr(dayLabel);
+    addError(dayInvalid);
+  }
+}
+
+function convert() {
+  const birthYear = yearInput.value;
+  const birthMonth = monthInput.value;
+  const birthDay = dayInput.value;
+
+  let months;
+  let days;
+
+  
+  let years = currentYear - birthYear;
+  if (currentMonth >= birthMonth) {
+    months = currentMonth - birthMonth;
+  } else {
+    years--;
+    months = currentMonth - birthMonth + 12;
+  }
+
+  if (currentDay >= birthDay) {
+    days = currentDay - birthDay;
+  } else {
+    months--;
+    days = currentDay - birthDay + 31;
+
+    if (months < 0) {
+      months = 11;
+      years--;
+    }
+  }
+
+  birthDay > 31 || birthDay < 1 || birthMonth < 1 || birthMonth > 12 || birthYear > currentYear || birthDay == "" || birthMonth == "" || birthYear == "" 
+    ? false
+    : (replaceDays.innerHTML = days + " ");
+  birthMonth > 12 ||  birthDay > 31 || birthDay < 1 || birthMonth < 1 || birthYear > currentYear || birthMonth == "" || birthDay == "" || birthYear == "" 
+    ? false
+    : (replaceMonths.innerHTML = months + " ");
+  birthYear >= currentYear ||
+  birthDay > 31 || birthMonth > 12 || birthDay < 1 || birthMonth < 1 || birthYear == "" || birthDay == "" || birthMonth == "" 
+    ? false
+    : (replaceYears.innerHTML = years + " ");
 }
 
 submit.addEventListener("click", validate);

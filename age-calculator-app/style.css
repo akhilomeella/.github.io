@@ -12,8 +12,8 @@ body {
   margin: 0;
 }
 
-section {
-  height: 100vh;
+.main {
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,8 +124,12 @@ span {
 }
 
 @media only screen and (max-width: 600px) {
-  html {
-    margin: 0 20px 0 20px;
+  .main{
+    
+   
+    margin: 30px 30px 0 6em;
+    padding: 30px 20px 0 6em;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,7 +137,6 @@ span {
 
   .container {
     width: 100%;
-    margin: 0 30px 0 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -184,12 +187,19 @@ span {
 
   .arrowBtn {
     position: absolute;
-    left: 40%;
+    left: 60%;
     /* transform: translate(-50%, -50%); */
   }
 
   .invalid-error,
 .empty-error{
     font-size: 9px;
+  }
+
+  .attribution{
+    font-size: 8px;
+    position: absolute;
+    left: 30%;
+    word-wrap: none;
   }
 }
