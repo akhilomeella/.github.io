@@ -124,12 +124,14 @@ span {
 }
 
 @media only screen and (max-width: 600px) {
+html{
+  margin: 0;
+  padding: 0;
+}
+
   .main{
-    
-   
     margin: 30px 30px 0 6em;
     padding: 30px 20px 0 6em;
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,9 +199,9 @@ span {
   }
 
   .attribution{
-    font-size: 8px;
-    position: absolute;
-    left: 30%;
-    word-wrap: none;
+    font-size: 6px;
+    
+   
+    
   }
 }
