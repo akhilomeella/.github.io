@@ -161,18 +161,6 @@ main {
   line-height: 27px;
 }
 
-.attribution {
-  font-size: 11px;
-  color: rgb(240, 244, 248);
-  text-align: center;
-  position: absolute;
-  top: 90%;
-}
-
-.attribution a {
-  color: hsl(228, 41%, 56%);
-}
-
 @media only screen and (max-width: 425px) {
   .container,
   .response {
@@ -189,8 +177,5 @@ main {
     justify-content: space-between;
   }
 
-  .attribution {
-    display: flex;
-    width: 100%;
-  }
+  
 }
