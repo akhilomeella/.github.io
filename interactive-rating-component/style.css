@@ -160,13 +160,13 @@ main {
 }
 
 @media only screen and (max-width: 425px) {
-  .container,
+  .container{
+    width: 100%;
+  }
   .response {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    
   }
 
   .btns {
