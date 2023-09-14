@@ -64,6 +64,10 @@ input::placeholder {
   color: #848484;
 }
 
+input:hover{
+  border: 1px solid hsl(259, 100%, 65%);
+}
+
 input:invalid {
   border: 1px solid red;
 }
@@ -102,6 +106,11 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.arrowBtn:hover{
+  background-color: #000;
+  cursor: pointer;
 }
 
 .convert {
