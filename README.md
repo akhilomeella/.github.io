@@ -9,3 +9,4 @@ This follow-along repository would contain my solutions to the Frontend Mentor c
 
 03 - [Age Calculator App](https://akhilomeella.github.io/frontendMentors/age-calculator-app/)
 
+04 - [Advice Generator App](https://akhilomeella.github.io/frontendMentors/advice-generator-app/)
