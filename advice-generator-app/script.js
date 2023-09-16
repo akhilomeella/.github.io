@@ -1,6 +1,6 @@
 window.onload = function () {
-  const adviceID = document.getElementById("adviceID");
-  const adviceText = document.getElementById("adviceText");
+  const adviceID = document.getElementById("ID");
+  const adviceText = document.getElementById("Text");
   const Button = document.getElementById("button");
 
   async function getAdvice() {
