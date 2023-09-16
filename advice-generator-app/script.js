@@ -9,7 +9,7 @@ window.onload = function () {
       const data = await response.json();
       const quote = data.slip;
       adviceID.textContent = `${quote.id}`;
-      adviceText.textContent = `"${quote.advice}"`;
+      adviceText.textContent = `${quote.advice}`;
     } catch (error) {
       console.error(`Error fetching data: ${error.message}`);
     }
