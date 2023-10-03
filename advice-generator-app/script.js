@@ -2,6 +2,7 @@ window.onload = function () {
   const adviceID = document.getElementById("ID");
   const adviceText = document.getElementById("Text");
   const Button = document.getElementById("button");
+  const Loader = document.querySelector(".custom-loader");
 
   async function getAdvice() {
     try {

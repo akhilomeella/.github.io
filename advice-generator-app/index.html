@@ -24,20 +24,19 @@
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
   <body>
-    
-      <div class="container">
-        <h1>Advice #<span id="ID"></span></h1>
-        <p class="advice">"<span id="Text"></span>"</p>
-        <div class="divider">
-          <img src="./images/pattern-divider-desktop.svg" alt="divider" />
-        </div>
-
-        <button id="button" class="dice">
-          <img src="./images/icon-dice.svg" alt="dice">
-        </button>
+    <div class="container">
+      <h1>Advice #<span id="ID">0</span></h1>
+      <p class="advice">"<span id="Text">Welcome</span>"</p>
+      <div class="divider">
+        <img src="./images/pattern-divider-desktop.svg" alt="divider" />
       </div>
-      
-<script src="script.js"></script>
+      <div class="custom-loader" id="loader"></div>
 
+      <button id="button" class="dice">
+        <img src="./images/icon-dice.svg" alt="dice" />
+      </button>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
